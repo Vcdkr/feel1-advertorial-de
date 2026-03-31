@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mein Dermatologe hat meine Haut schlimmer gemacht – das hat sie wirklich geheilt | Kaufvergleich</title>
+  <title>Mein Dermatologe hat meine Haut schlimmer gemacht – das hat sie wirklich geheilt | Medi-Journal</title>
   <meta name="description" content="Ein Männergesundheitsspezialist enthüllt, warum Dermatologen immer wieder Cremes verschreiben, die Hautrötungen verschlimmern – und was wirklich hilft." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,23 +13,21 @@
 
     :root {
       --cs-font-base-family: 'Inter', sans-serif;
-      --cs-color-accent: #0a0a0a;
-      --cs-color-accent-contrast: #ffffff;
-      --cs-color-styled-heading: #ffdc75;
-      --cs-common-border-radius: 0px;
-      --cs-color-secondary: #818181;
       --black: #0a0a0a;
-      --gold: #ffdc75;
-      --gold-dark: #e6c355;
+      --teal: #41af9b;
+      --teal-dark: #339988;
+      --teal-light: #e8f7f5;
       --white: #ffffff;
-      --gray-100: #f7f7f7;
+      --gray-50: #f8f9fb;
+      --gray-100: #f1f3f6;
       --gray-200: #e9ecef;
       --gray-300: #dee2e6;
-      --gray-400: #818181;
-      --gray-600: #555555;
-      --gray-800: #222222;
-      --footer-bg: #111111;
+      --gray-400: #9aa0ab;
+      --gray-600: #555b6a;
+      --gray-800: #2c2c2c;
       --green: #2d7a4f;
+      --green-cta: #2e9e6b;
+      --green-cta-dark: #237a54;
       --green-light: #e8f5ee;
       --red: #c0392b;
     }
@@ -50,68 +48,23 @@
        HEADER
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     header {
-      background: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 200;
-      border-bottom: 1px solid var(--gray-200);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      background: var(--teal);
+      position: relative;
     }
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 24px;
-      height: 72px;
+      padding: 0 28px;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
-    .logo-wrap { display: flex; align-items: center; flex-shrink: 0; }
-    .kv-logo-img {
-      height: 54px;
-      width: auto;
-      display: block;
-    }
-
-    .elementor-size-sm.kv-info-btn {
-      display: inline-flex;
-      align-items: center;
-      background: var(--gold);
-      color: var(--black);
-      font-family: var(--cs-font-base-family);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      padding: 12px 28px;
-      border-radius: 10px;
-      border: 1px solid #333;
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-      cursor: pointer;
-      gap: 0;
-    }
-    .kv-info-btn:hover {
-      background: #0f1f4b;
-      border-color: #0f1f4b;
-      color: var(--gold);
-    }
-    .kv-info-btn:hover .e-font-icon-svg.e-fas-search {
-      fill: var(--gold);
-    }
-    .elementor-button-content-wrapper {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-    }
-    .elementor-button-icon { display: flex; align-items: center; }
-    .e-font-icon-svg.e-fas-search {
-      width: 15px;
-      height: 15px;
-      fill: var(--black);
-      transition: fill 0.2s;
-    }
-    .elementor-button-text { line-height: 1; }
+    .logo-wrap { display: flex; align-items: center; gap: 8px; flex-shrink: 0; text-decoration: none; }
+    .logo-cross { font-size: 1.2rem; color: #fff; font-weight: 900; line-height: 1; }
+    .logo-name { font-family: var(--cs-font-base-family); font-size: 1rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+    .header-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.9); }
+    @media (max-width: 600px) { .header-tagline { display: none; } }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        INFO POPUP MODAL
@@ -171,13 +124,9 @@
        PAGE LAYOUT
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     .page-wrap {
-      max-width: 1200px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 0 20px;
-      display: grid;
-      grid-template-columns: 1fr 240px;
-      gap: 28px;
-      align-items: start;
     }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -188,75 +137,107 @@
       box-shadow: none;
     }
 
-    .post-category { display: none; }
-    .post-header { padding: 24px 32px 4px; border-bottom: none; }
-    .post-header h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      line-height: 1.18;
-      letter-spacing: -0.01em;
-      color: #000;
-      margin-bottom: 6px;
+    /* ── ARTICLE INNER ── */
+    .article-inner {
+      padding: 36px 32px 0;
+      border-top: 3px solid var(--teal);
     }
-    .post-header h1 span { color: #000; }
-    .post-subheadline {
-      font-size: 1.05rem;
-      font-weight: 700;
-      font-style: italic;
-      text-decoration: underline;
-      color: #000;
-      border: none;
-      padding: 0;
-      margin: 0 0 8px;
-      line-height: 1.45;
-    }
-    .post-dateline {
-      font-size: 0.82rem;
-      color: #666;
-      margin: 0;
-    }
-    .post-excerpt {
-      font-size: 1rem;
-      color: var(--gray-600);
-      line-height: 1.6;
-      border-left: 3px solid var(--gold);
-      padding-left: 16px;
+
+    .article-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
       margin-bottom: 18px;
     }
-    .post-meta {
+    .article-category::before {
+      content: '';
+      display: inline-block;
+      width: 18px; height: 2px;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .main-headline {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.13;
+      letter-spacing: -0.025em;
+      color: var(--gray-800);
+      margin-bottom: 14px;
+    }
+
+    .article-deck {
+      font-size: 1.05rem;
+      font-style: normal;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin: 0 0 24px;
+      padding: 0;
+      background: none;
+      border-radius: 0;
+    }
+
+    .author-row {
       display: flex;
       align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px 0 20px;
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 3px solid var(--gray-100);
+      margin-bottom: 32px;
     }
-    .author-block { display: flex; align-items: center; gap: 9px; }
     .author-avatar {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: var(--gray-200);
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--teal-light);
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.78rem; font-weight: 700; color: var(--gray-600);
-      border: 2px solid var(--gold);
+      font-size: 0.78rem; font-weight: 800;
+      color: var(--teal-dark);
+      flex-shrink: 0;
       overflow: hidden;
+      border: 2px solid var(--teal);
+      box-shadow: 0 0 0 3px var(--teal-light);
     }
-    .author-name { font-size: 0.8rem; font-weight: 700; color: var(--black); }
-    .author-role { font-size: 0.68rem; color: var(--gray-400); }
-    .meta-sep { width: 1px; height: 28px; background: var(--gray-200); }
-    .meta-date { font-size: 0.72rem; color: var(--gray-400); display: flex; align-items: center; gap: 5px; }
-    .meta-date svg { opacity: 0.5; }
-    .verified-tag {
-      display: flex; align-items: center; gap: 5px;
-      border: 1px solid #a8d5bc;
-      background: var(--green-light);
-      padding: 4px 10px;
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 0.04em;
+    .author-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .author-text p { font-size: 0.82rem; line-height: 1.5; color: var(--gray-600); margin: 0; }
+    .author-text .author-name { font-weight: 700; color: var(--gray-800); }
+
+    .read-this-box {
+      background: var(--gray-50);
+      border-left: 4px solid var(--teal);
+      padding: 16px 20px;
+      margin-bottom: 28px;
     }
-    .read-time {
-      font-size: 0.68rem; color: var(--gray-400);
-      display: flex; align-items: center; gap: 5px;
-      margin-left: auto;
+    .read-this-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .read-this-box p {
+      font-size: 0.97rem;
+      line-height: 1.65;
+      color: var(--gray-800);
+      font-style: italic;
+      margin: 0;
+    }
+    .read-this-box p strong { font-weight: 800; font-style: normal; }
+    .read-this-divider { height: 1px; background: var(--gray-200); margin: 0 0 28px; }
+
+    .article-main-img {
+      width: 100%;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 28px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
     }
 
     /* Hero image */
@@ -282,7 +263,7 @@
     }
 
     /* Post body */
-    .post-body { padding: 6px 32px 24px; }
+    .post-body { padding: 0 32px 24px; }
     .post-body img { margin: 14px 0; }
     .post-body p {
       font-size: 1.05rem; line-height: 1.8;
@@ -311,8 +292,8 @@
     }
 
     .note-box {
-      background: #ffffff;
-      border-left: 4px solid #111;
+      background: var(--teal-light);
+      border-left: 4px solid var(--teal);
       padding: 13px 18px;
       margin: 16px 0;
       font-style: italic;
@@ -324,11 +305,11 @@
     }
 
     .pull-quote {
-      background: #f9f9f9;
+      background: var(--teal-light);
       color: #111;
       padding: 18px 22px;
       margin: 22px 0;
-      border-left: 4px solid #333;
+      border-left: 4px solid var(--teal);
     }
     .pull-quote::before { display: none; }
     .pull-quote p {
@@ -442,12 +423,12 @@
       font-size: 0.65rem; flex-shrink: 0; margin-top: 1px;
       font-weight: 800;
     }
-    .chk.yes { background: var(--black); color: var(--gold); }
+    .chk.yes { background: var(--teal); color: #fff; }
     .chk.no { background: #ddd; color: #888; }
 
     /* Testimonial */
     .testimonial {
-      border-left: 4px solid var(--gold);
+      border-left: 4px solid var(--teal);
       background: var(--gray-100);
       padding: 20px 22px;
       margin: 18px 0;
@@ -461,12 +442,13 @@
     }
     .t-author { display: flex; align-items: center; gap: 10px; }
     .t-avatar {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: var(--black);
-      color: var(--gold);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--gray-200);
       display: flex; align-items: center; justify-content: center;
       font-size: 0.8rem; font-weight: 800; flex-shrink: 0;
+      overflow: hidden; border: 2px solid var(--gray-200);
     }
+    .t-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .t-name { font-size: 0.8rem; font-weight: 700; color: var(--black); }
     .t-stars { color: var(--gold-dark); font-size: 0.82rem; }
     .t-date { font-size: 0.68rem; color: var(--gray-400); }
@@ -489,24 +471,24 @@
       letter-spacing: 0.1em;
     }
     .ba-label-bar.before { background: #222; color: #aaa; }
-    .ba-label-bar.after { background: var(--gold); color: var(--black); }
+    .ba-label-bar.after { background: var(--teal); color: #fff; }
 
     .note-box strong { color: #111; }
 
     /* CTA block */
     .cta-block {
-      background: var(--black);
+      background: #1a1a1a;
       padding: 28px 30px;
       margin: 30px 0;
       text-align: center;
-      border-top: 4px solid var(--gold);
+      border-top: 3px solid var(--teal);
     }
     .cta-block-label {
       font-size: 0.65rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: var(--gold);
+      color: var(--teal);
       margin-bottom: 8px;
     }
     .cta-block-title {
@@ -523,8 +505,8 @@
     }
     .cta-btn {
       display: inline-block;
-      background: var(--gold);
-      color: var(--black);
+      background: var(--green-cta);
+      color: #fff;
       font-size: 1.05rem;
       font-weight: 800;
       padding: 18px 44px;
@@ -532,26 +514,29 @@
       transition: background 0.2s, transform 0.15s;
       border: none;
       cursor: pointer;
+      border-radius: 4px;
     }
-    .cta-btn:hover { background: #e6c355; transform: translateY(-1px); }
+    .cta-btn:hover { background: var(--green-cta-dark); transform: translateY(-1px); }
     .cta-btn-note { font-size: 0.68rem; color: #666; margin-top: 10px; }
 
-    /* Inline text CTA */
+    /* Inline CTA button */
     .inline-cta {
       display: block;
       text-align: center;
-      background: var(--gray-100);
-      border: 1px solid var(--gray-200);
-      border-left: 4px solid var(--black);
-      padding: 16px 20px;
-      margin: 24px 0;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--black);
-      transition: background 0.2s;
+      background: var(--teal);
+      border: none;
+      border-radius: 8px;
+      padding: 16px 28px;
+      margin: 28px 0;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(65,175,155,0.3);
     }
-    .inline-cta:hover { background: var(--gold); border-color: var(--black); }
-    .inline-cta span { font-size: 0.82rem; font-weight: 400; display: block; margin-top: 4px; color: #555; }
+    .inline-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .inline-cta span { font-size: 0.8rem; font-weight: 400; display: block; margin-top: 5px; color: rgba(255,255,255,0.8); }
 
     /* Order Steps Section */
     .order-steps-box {
@@ -767,83 +752,47 @@
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        FOOTER
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    footer { background: #fff; border-top: 1px solid #e0e0e0; color: #0f1f4b; }
+    footer { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
     .footer-main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 52px 32px 36px;
-      display: grid;
-      grid-template-columns: 2.2fr 1fr 1.2fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .footer-logo-link { display: inline-block; margin-bottom: 18px; }
-    .footer-logo-img {
-      height: 42px;
-      width: auto;
-      display: block;
-    }
-    .footer-brand p {
-      font-size: 0.875rem;
-      line-height: 1.8;
-      color: #0f1f4b;
-      max-width: 360px;
-    }
-
-    .footer-col h4 {
-      font-size: 1rem;
-      font-weight: 800;
-      color: #0f1f4b;
-      margin-bottom: 18px;
-      letter-spacing: 0;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul li a {
-      font-size: 0.875rem;
-      color: #0f1f4b;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-col ul li a:hover { color: #c8a800; }
-    .footer-contact-item {
+      padding: 28px 32px 20px;
       display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.875rem;
-      color: #0f1f4b;
-      margin-top: 4px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
     }
-    .footer-contact-item span { line-height: 1.6; }
-
+    .footer-nav { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-nav a { font-size: 0.88rem; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--teal); }
+    .footer-logo-text { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .footer-logo-cross { color: var(--teal); font-size: 1.1rem; font-weight: 900; }
+    .footer-logo-name { font-size: 0.95rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-800); }
     .footer-bottom {
-      border-top: 1px solid #e0e0e0;
-      padding: 18px 32px;
+      border-top: 1px dashed var(--gray-200);
+      padding: 14px 32px;
       max-width: 1100px;
       margin: 0 auto;
     }
-    .footer-bottom p { font-size: 0.82rem; color: #555; }
+    .footer-bottom p { font-size: 0.8rem; color: var(--gray-400); }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        RESPONSIVE
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     @media (max-width: 900px) {
-      .page-wrap { grid-template-columns: 1fr; }
-      .sidebar { position: static; }
-      .post-header { padding: 22px 20px 18px; }
-      .post-header h1 { font-size: 1.5rem; }
-      .post-body { padding: 22px 20px; }
+      .article-inner { padding: 24px 20px 0; }
+      .main-headline { font-size: 1.75rem; }
+      .post-body { padding: 0 20px 22px; }
+      .meta-right { display: none; }
       .ba-wrap { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
-      .footer-main { grid-template-columns: 1fr 1fr; }
-      .kv-logo-img { height: 50px; }
+      .footer-main { flex-direction: column; align-items: flex-start; gap: 16px; }
       .trust-badges { flex-wrap: wrap; }
       .trust-badge { min-width: 48%; }
     }
     @media (max-width: 600px) {
-      .footer-main { grid-template-columns: 1fr; }
-      .kv-logo-img { height: 44px; }
+      .footer-nav { gap: 14px; }
     }
   </style>
 </head>
@@ -854,27 +803,11 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <header>
   <div class="header-inner">
-    <div class="logo-wrap">
-      <a href="#">
-        <img
-          src="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-1024x256.png"
-          srcset="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-300x75.png 300w,
-                  https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-768x192.png 768w,
-                  https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-1024x256.png 1024w"
-          sizes="(max-width: 400px) 300w, 220px"
-          alt="Kaufvergleich"
-          class="kv-logo-img"
-        />
-      </a>
-    </div>
-    <a class="elementor-button elementor-button-link elementor-size-sm kv-info-btn" href="#" onclick="document.getElementById('kvInfoModal').classList.add('active'); return false;">
-      <span class="elementor-button-content-wrapper">
-        <span class="elementor-button-text">Info</span>
-        <span class="elementor-button-icon">
-          <svg aria-hidden="true" class="e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg>
-        </span>
-      </span>
+    <a href="#" class="logo-wrap">
+      <span class="logo-cross">✚</span>
+      <span class="logo-name">Medi-Journal</span>
     </a>
+    <span class="header-tagline">Ihr Gesundheitsportal</span>
   </div>
 </header>
 
@@ -907,20 +840,28 @@
   ════════════════════════ -->
   <article>
 
-    <!-- POST HEADER -->
-    <div class="post-header">
-      <h1>Mein Dermatologe hat meine Haut schlimmer gemacht – das hat sie wirklich geheilt</h1>
-      <h3 class="post-subheadline">„Ein Männergesundheitsspezialist enthüllt, warum Dermatologen immer wieder Cremes verschreiben, die Hautrötungen verschlimmern – und das eine Mittel, das tatsächlich wirkt."</h3>
-      <p class="post-dateline">Zuletzt aktualisiert: März 2026 &nbsp;·&nbsp; Dr. Michael Bauer, Männergesundheit &amp; Performance-Spezialist</p>
-    </div>
+    <!-- ARTICLE HERO -->
+    <div class="article-inner">
+
+      <span class="article-category">Männergesundheit &amp; Hautpflege</span>
+
+      <h1 class="main-headline">Mein Dermatologe hat meine Haut schlimmer gemacht – das hat sie wirklich geheilt</h1>
+
+      <p class="article-deck">Ein Männergesundheitsspezialist enthüllt, warum Dermatologen immer wieder Cremes verschreiben, die Hautrötungen verschlimmern — und der 4-Inhaltsstoff-Fix, über den sie niemals sprechen werden</p>
+
+      <div class="author-row">
+        <div class="author-avatar">
+          <img src="img/skin-problem-de/doctor-bauer.jpg" alt="Dr. Michael Bauer">
+        </div>
+        <div class="author-text">
+          <p>Von <span class="author-name">Dr. Michael Bauer</span>, Männergesundheit &amp; Performance-Spezialist &nbsp;·&nbsp; 31. März 2026 &nbsp;·&nbsp; 7 Min. Lesezeit</p>
+        </div>
+      </div>
+
+    </div><!-- /article-inner -->
 
     <!-- POST BODY -->
     <div class="post-body">
-
-      <!-- HERO IMAGE -->
-      <img src="img/skin-problem-de/main.jpg" alt="Hautrötung Vorher Nachher" style="width:100%;border-radius:4px;margin-bottom:18px;">
-
-      <div class="note-box">Hinweis: Dieser Bericht basiert auf 17 Jahren klinischer Erfahrung mit Männerhautproblemen. Das hier vorgestellte Produkt – Feel1 Rindertalg Creme – ist nicht verschreibungspflichtig und ohne Rezept erhältlich.</div>
 
       <!-- OPENING -->
       <p>Ich arbeite seit 17 Jahren mit Männern zusammen – und höre immer wieder dieselbe Geschichte.</p>
@@ -930,6 +871,9 @@
       <p>Der Dermatologe hat ihm eine „gestörte Hautbarriere" diagnostiziert und eine 180-Euro-Creme verschrieben. Er hat sie drei Monate lang gewissenhaft verwendet.</p>
 
       <p>Seine Haut wurde <strong>SCHLIMMER.</strong></p>
+
+      <!-- HERO IMAGE -->
+      <img src="img/skin-problem-de/main.jpg" alt="Mann mit Hautproblemen" class="article-main-img">
 
       <p>Trockener. Gereizter. Dieses enge, unangenehme Gefühl, das einfach nicht verschwindet.</p>
 
@@ -994,8 +938,6 @@
       <!-- SECTION 3 -->
       <h3>Warum Ihr Dermatologe das niemals empfehlen wird</h3>
 
-      <img src="img/skin-problem-de/3.jpg" alt="Dermatologe" style="width:100%;border-radius:4px;">
-
       <p>Wenn Rindertalg so wirksam ist – warum hat Ihr Dermatologe ihn nicht erwähnt, als er Ihnen diese 180-Euro-Creme in die Hand drückte?</p>
 
       <p>Zwei Gründe.</p>
@@ -1006,11 +948,13 @@
 
       <p>Aber Ihre Haut interessiert sich nicht dafür, was fortschrittlich klingt. Sie interessiert sich dafür, was wirkt.</p>
 
+      <img src="img/skin-problem-de/3.jpg" alt="Dermatologe" style="width:100%;border-radius:4px;margin-bottom:6px;">
+
       <!-- TESTIMONIAL -->
       <div class="testimonial">
         <div class="t-text">„Ich hatte zwei Jahre lang eine rote Nase und rote Wangen. Drei Dermatologen, zwei Verschreibungen. Nichts hat geholfen. Nach drei Wochen Feel1 Rindertalg Creme ist die Rötung um gefühlt 80% zurückgegangen. Ich kann es immer noch nicht glauben."</div>
         <div class="t-author">
-          <div class="t-avatar">MK</div>
+          <div class="t-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Markus K."></div>
           <div>
             <div class="t-name">Markus K., 41 &nbsp;<span class="t-stars">★★★★★</span></div>
             <div class="t-date">Verifizierter Käufer · Februar 2026</div>
@@ -1037,7 +981,7 @@
 
       <p>Schließlich funktioniert reiner Talg am besten, wenn er mit komplementären natürlichen Inhaltsstoffen kombiniert wird. Die Feel1 Rindertalg Creme enthält genau vier:</p>
 
-      <img src="https://cdn.shopify.com/s/files/1/0767/7886/4919/files/image_5_webp.webp?v=1768212620" alt="Feel1 Zutaten" style="width:100%;border-radius:4px;">
+      <img src="img/skin-problem-de/4.jpg" alt="Feel1 Zutaten" style="width:100%;border-radius:4px;">
 
       <ul style="list-style:none;margin:0 0 18px;padding:0;">
         <li style="padding:10px 0;border-bottom:1px solid #eee;font-size:1rem;color:#333;line-height:1.6;"><strong>Grasgefütterter Rindertalg</strong> – bioidentisch mit den natürlichen Ölen Ihrer Haut, reich an den Vitaminen A, D, E und K</li>
@@ -1047,6 +991,15 @@
       </ul>
 
       <p>Vier Inhaltsstoffe. Mehr nicht. Keine Duftstoffe. Keine synthetischen Konservierungsstoffe. Keine Füllstoffe. Keine Reizstoffe. Nichts, das Ihre Rötungen auslösen kann.</p>
+
+      <!-- EARLY CTA -->
+      <div class="cta-block">
+        <div class="cta-block-label">Limitiertes Angebot</div>
+        <div class="cta-block-title">Feel1 Rindertalg Creme – Jetzt 50% günstiger</div>
+        <div class="cta-block-sub">Nur 4 natürliche Inhaltsstoffe · Grasgefütterter Rindertalg · 30-Tage-Garantie</div>
+        <a href="https://go.getfeel1.com/feel1-tallow-m-2499-0601-de/landing?preview=4186025" class="cta-btn">Jetzt zum halben Preis sichern →</a>
+        <p class="cta-btn-note">Kostenloser Versand · 30-Tage-Rückgaberecht · Keine versteckten Kosten</p>
+      </div>
 
       <!-- SECTION 5 -->
       <h3>Was Männer mit geröteter Haut als Erstes bemerken</h3>
@@ -1118,7 +1071,7 @@
       <div class="testimonial">
         <div class="t-text">„Ich bin 44 und hatte seit meiner Jugend Rötungen im Gesicht. Das ist das erste Mal, dass meine Haut ohne aggressive Cremes normal aussieht. Meine Frau hat mich gefragt, ob ich beim Arzt war."</div>
         <div class="t-author">
-          <div class="t-avatar">SK</div>
+          <div class="t-avatar"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Stefan K."></div>
           <div>
             <div class="t-name">Stefan K. &nbsp;<span class="t-stars">★★★★★</span></div>
             <div class="t-date">Verifizierter Käufer · Januar 2026</div>
@@ -1129,7 +1082,7 @@
       <div class="testimonial">
         <div class="t-text">„Meinen 200-Euro-Dermatologen-Termin abgesagt. Brauche ihn nicht mehr. Drei Wochen Feel1 und meine Haut sieht besser aus als nach einem Jahr Rezept-Creme."</div>
         <div class="t-author">
-          <div class="t-avatar">TM</div>
+          <div class="t-avatar"><img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Thomas M."></div>
           <div>
             <div class="t-name">Thomas M. &nbsp;<span class="t-stars">★★★★★</span></div>
             <div class="t-date">Verifizierter Käufer · Februar 2026</div>
@@ -1140,7 +1093,7 @@
       <div class="testimonial">
         <div class="t-text">„Endlich kann ich wieder ohne Scham in den Spiegel schauen. Die Rötung, die mich 10 Jahre lang begleitet hat, ist weg. Ich hätte das nie für möglich gehalten."</div>
         <div class="t-author">
-          <div class="t-avatar">JW</div>
+          <div class="t-avatar"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Jonas W."></div>
           <div>
             <div class="t-name">Jonas W. &nbsp;<span class="t-stars">★★★★★</span></div>
             <div class="t-date">Verifizierter Käufer · März 2026</div>
@@ -1189,170 +1142,75 @@
         </div>
       </div>
 
-      <!-- ORDER STEPS -->
-      <h3>So erhalten Sie die Feel1 Rindertalg Creme:</h3>
-
-      <div class="order-steps-box">
-        <p>Aktuell ist die Feel1 Rindertalg Creme ausschließlich auf der offiziellen Website erhältlich.</p>
-        <p>⚠️ <strong>Hinweis:</strong> Aufgrund der kleinen Produktionschargen haben wir aktuell nur begrenzten Vorrat.</p>
-        <p><strong>Schritt 1:</strong> Sichern Sie sich Ihre Feel1 Rindertalg Creme noch heute auf der offiziellen Website – solange der Vorrat reicht.</p>
-        <p><strong>Schritt 2:</strong> In nur 4–9 Werktagen wird Ihr Glas Feel1 Rindertalg Creme direkt zu Ihnen nach Hause geliefert.</p>
-        <p><strong>Schritt 3:</strong> Tragen Sie morgens und abends eine kleine Menge auf das ganze Gesicht auf. Kein Brennen, kein Stechen. Nur wohltuende Regeneration – während Ihre Haut endlich bekommt, was sie braucht.</p>
-        <p>Denken Sie daran: Dieses Angebot ist ausschließlich auf der offiziellen Website zugänglich. Aufgrund der hohen Nachfrage können wir die Verfügbarkeit nicht dauerhaft garantieren – sichern Sie sich also noch heute Ihre Creme.</p>
-      </div>
-
-      <div class="order-cta-wrap">
-        <a href="https://go.getfeel1.com/feel1-tallow-m-2499-0601-de/landing?preview=4186025" target="_blank" class="order-cta-btn">
-          Jetzt Verfügbarkeit prüfen →
-        </a>
-        <p class="order-cta-sub"><em><strong>Klicken Sie auf den Link oben, um zu prüfen, ob die Feel1 Rindertalg Creme noch verfügbar ist!</strong></em></p>
-      </div>
-
-      <!-- TRUST LOGOS -->
-      <div class="trust-logos-row">
-        <img src="https://cdn.shopify.com/s/files/1/0770/4330/2679/files/ezgif.com-gif-maker_9_55962f2e-f4ff-4a4f-857f-a87435d001d6.webp?v=1701030845" alt="NIH">
-        <img src="https://cdn.shopify.com/s/files/1/0770/4330/2679/files/Healthline_WEBP.webp?v=1701031004" alt="Healthline">
-        <img src="https://cdn.shopify.com/s/files/1/0770/4330/2679/files/mayo_clinic_webp.webp?v=1701031208" alt="Mayo Clinic">
-        <img src="https://cdn.shopify.com/s/files/1/0770/4330/2679/files/mnt_WEBP.webp?v=1701031497" alt="MNT">
-        <img src="https://cdn.shopify.com/s/files/1/0767/7886/4919/files/women_s_health_WEBP_e7191712-7974-4d38-9627-67d428e51066.webp?v=1706323569" alt="Women's Health">
-        <img src="https://cdn.shopify.com/s/files/1/0770/4330/2679/files/science_direct_WEBP.webp?v=1701031912" alt="Science Direct">
-      </div>
-
-      <!-- TAGS -->
-      <div class="tags-row">
-        <span class="tag">Hautrötung</span>
-        <span class="tag">Rindertalg</span>
-        <span class="tag">Rosazea</span>
-        <span class="tag">Männerhaut</span>
-        <span class="tag">Natürliche Pflege</span>
-        <span class="tag">Hautbarriere</span>
-        <span class="tag">Feel1</span>
-      </div>
 
     </div><!-- /post-body -->
   </article>
 
-  <!-- ════════════════════════
-       SIDEBAR
-  ════════════════════════ -->
-  <aside class="sidebar">
-    <div id="kv-sidebar-card" style="border:1px solid #a8a8a8;border-radius:14px;overflow:hidden;background:#fff;text-align:center;
-                position:sticky;top:16px;
-                display:flex;flex-direction:column;">
+</div><!-- /page-wrap -->
 
-      <!-- Inner content -->
-      <div style="padding:22px 16px 16px;flex:1;display:flex;flex-direction:column;align-items:center;">
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     BOTTOM CTA SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section style="background:#1a1a1a;padding:60px 20px;border-top:3px solid var(--teal);">
+  <div style="max-width:800px;margin:0 auto;display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;">
 
-        <!-- Feel1 Logo -->
-        <img src="https://img.funnelish.com/5973/869783/1753174619-Feel1_LOGO.svg"
-             alt="Feel1"
-             style="width:120px;margin:0 auto 12px;display:block;">
+    <!-- Jar image -->
+    <div style="flex-shrink:0;">
+      <img src="https://img.funnelish.com/5973/0/1772010840-image-removebg-preview%20%2813%29.png"
+           alt="Feel1 Rindertalg Creme"
+           style="width:200px;height:auto;display:block;filter:drop-shadow(0 8px 24px rgba(65,175,155,0.25));">
+    </div>
 
-        <!-- Stars + reviews -->
-        <p style="font-size:0.85rem;color:#333;margin-bottom:3px;">Empfohlen: <strong>★★★★★</strong></p>
-        <p style="font-size:0.82rem;color:#555;margin-bottom:14px;">4,9 | 1.897 Bewertungen</p>
+    <!-- Text + CTA -->
+    <div style="flex:1;min-width:260px;text-align:left;">
+      <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Exklusives Angebot</div>
+      <h2 style="font-size:1.8rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px;letter-spacing:-0.02em;">Feel1 Rindertalg Creme<br>— Jetzt 50% günstiger</h2>
+      <p style="font-size:0.95rem;color:#aaa;margin-bottom:22px;line-height:1.6;">Nur 4 natürliche Inhaltsstoffe. Grasgefütterter Rindertalg. 30-Tage-Geld-zurück-Garantie. Kostenloser Versand.</p>
 
-        <!-- Title -->
-        <h3 style="font-weight:800;font-size:1.05rem;color:#111;margin:0 0 14px;border:none;padding:0;line-height:1.3;">Bioidentische Hautregeneration</h3>
+      <!-- Stars -->
+      <p style="font-size:0.9rem;color:#ddd;margin-bottom:20px;">★★★★★ &nbsp;<span style="color:#888;font-size:0.82rem;">4,9 · 1.897 Bewertungen</span></p>
 
-        <!-- Product image -->
-        <img src="https://img.funnelish.com/5973/0/1772010840-image-removebg-preview%20%2813%29.png"
-             alt="Feel1 Rindertalg Creme"
-             id="kv-prod-img"
-             style="width:65%;margin:0 auto 10px;display:block;object-fit:contain;">
-
-        <!-- Product name -->
-        <p style="font-size:0.85rem;color:#444;margin-bottom:0;">Feel1 Rindertalg Creme</p>
-
+      <!-- Price row -->
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:22px;">
+        <span style="font-size:2.2rem;font-weight:900;color:#fff;line-height:1;">€24,99</span>
+        <span style="font-size:1rem;color:#666;text-decoration:line-through;">€49,99</span>
+        <span style="background:var(--teal);color:#fff;font-size:0.72rem;font-weight:800;padding:3px 10px;letter-spacing:0.06em;">-50%</span>
       </div>
 
-      <!-- CTA pinned to bottom -->
       <a href="https://go.getfeel1.com/feel1-tallow-m-2499-0601-de/landing?preview=4186025"
          target="_blank"
-         style="display:block;width:100%;background:#2e9e6b;color:#fff;font-weight:800;font-size:0.78rem;
-                text-transform:uppercase;letter-spacing:0.1em;padding:20px 10px;
-                text-decoration:none;flex-shrink:0;transition:background 0.2s;"
+         style="display:inline-block;background:var(--green-cta);color:#fff;font-size:1.05rem;font-weight:800;padding:18px 40px;border-radius:4px;letter-spacing:0.02em;text-decoration:none;transition:background 0.2s;margin-bottom:12px;"
          onmouseover="this.style.background='#237a54'" onmouseout="this.style.background='#2e9e6b'">
-        Jetzt Verfügbarkeit prüfen
+        Jetzt sichern – Solange Vorrat reicht →
       </a>
-
+      <p style="font-size:0.72rem;color:#555;margin:0;">🛡️ 30 Tage Rückgaberecht &nbsp;·&nbsp; 🚚 Kostenloser Versand &nbsp;·&nbsp; 🔒 Sichere Zahlung</p>
     </div>
-  </aside>
 
-</div><!-- /page-wrap -->
+  </div>
+</section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      FOOTER
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <footer>
   <div class="footer-main">
-
-    <!-- Brand -->
-    <div class="footer-brand">
-      <a href="#" class="footer-logo-link">
-        <img
-          src="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-1024x256.png"
-          srcset="https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-300x75.png 300w,
-                  https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-768x192.png 768w,
-                  https://kaufvergleich.com/wp-content/uploads/2025/10/MEDIZIN-3-1024x256.png 1024w"
-          sizes="220px"
-          alt="Kaufvergleich"
-          class="footer-logo-img"
-        />
-      </a>
-      <p>Herzlich willkommen bei Kaufvergleich, Ihrem vertrauenswürdigen Ratgeber für fundierte Kaufentscheidungen. Unsere Plattform ist darauf spezialisiert, durch unabhängige Tests Ihnen die besten Produkte und Dienstleistungen aus verschiedenen Branchen und Nischen vorzustellen.</p>
+    <nav class="footer-nav">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">Über uns</a>
+      <a href="#">Redaktionelle Richtlinien</a>
+    </nav>
+    <div class="footer-logo-text">
+      <span class="footer-logo-cross">✚</span>
+      <span class="footer-logo-name">Medi-Journal</span>
     </div>
-
-    <!-- Rechtliches -->
-    <div class="footer-col">
-      <h4>Rechtliches</h4>
-      <ul>
-        <li><a href="#">Impressum</a></li>
-        <li><a href="#">Datenschutz</a></li>
-        <li><a href="#">So Vergleichen wir</a></li>
-      </ul>
-    </div>
-
-    <!-- Kontakt -->
-    <div class="footer-col">
-      <h4>Kontakt</h4>
-      <div class="footer-contact-item">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0f1f4b" style="flex-shrink:0;margin-top:3px">
-          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-        </svg>
-        <span>verwaltung@<br>kaufvergleich.com</span>
-      </div>
-    </div>
-
   </div>
 
   <!-- Bottom bar -->
   <div class="footer-bottom">
-    <p>© 2026 All Rights Reserved.</p>
+    <p>© 2026 Medi-Journal · Ihr unabhängiges Gesundheitsportal · Alle Rechte vorbehalten.</p>
   </div>
 </footer>
 
-<script>
-  (function() {
-    var card = document.getElementById('kv-sidebar-card');
-    if (!card) return;
-
-    var GAP_TOP    = 16;
-    var GAP_BOTTOM = 24;
-
-    function fitCard() {
-      var viewH   = window.innerHeight;
-      var scrollY = window.scrollY || window.pageYOffset;
-      var desiredTop = Math.max(GAP_TOP - Math.min(scrollY * 0.25, GAP_TOP + 40), -(GAP_TOP + 40));
-      var maxH = viewH - desiredTop - GAP_BOTTOM;
-      card.style.top       = desiredTop.toFixed(1) + 'px';
-      card.style.maxHeight = maxH + 'px';
-    }
-
-    fitCard();
-    window.addEventListener('scroll', fitCard, { passive: true });
-    window.addEventListener('resize', fitCard, { passive: true });
-  })();
-</script>
 </body>
 </html>
